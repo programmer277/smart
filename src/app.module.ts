@@ -15,6 +15,7 @@ import { TenantGuard } from './common/guards/tenant.guard';
 
 import { AuthGuard } from './common/guards/auth.guard';
 import { RolesGuard } from './common/guards/roles.guard';
+import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { RolesGuard } from './common/guards/roles.guard';
     LessonsModule,
     MediaModule,
     ProgressModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [
