@@ -1,4 +1,9 @@
-import { CanActivate, ExecutionContext, Injectable, BadRequestException } from '@nestjs/common';
+import {
+  BadRequestException,
+  CanActivate,
+  ExecutionContext,
+  Injectable,
+} from '@nestjs/common';
 import { Role } from '../constants/rules.enum';
 
 @Injectable()

@@ -1,5 +1,6 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get, Req } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { RequestWithUser } from '../../common/types/request-with-user';
 
 @Controller('auth')
 export class AuthController {
@@ -8,5 +9,10 @@ export class AuthController {
   @Post('login')
   login(@Body() body: { email: string; password: string }) {
     return this.authService.login(body.email, body.password);
+  }
+
+  @Get('me')
+  me(@Req() req: RequestWithUser) {
+    return req.user;
   }
 }
